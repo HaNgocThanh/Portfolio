@@ -1,0 +1,176 @@
+@import "tailwindcss";
+
+/* 🎨 Default (Light Theme) */
+:root {
+  --background: #fdfdfd;
+  --foreground: #ffffff;
+  --thirdary: #f3f4f6;
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+  --button-hover: #e5e7eb;
+  --neon-color: #111827; /* Replaced neon with strong primary contrast */
+  --button-hero: #111827;
+  --button-hero-hover: #374151;
+  --quick-stats-bg: #ffffff;
+  --bg-project-card: #ffffff;
+  --text-project-card: #fdfdfd;
+}
+
+/* 🌙 Dark Theme (aktif saat class .dark ada di <html>) */
+.dark {
+  --background: #0a0a0a;
+  --foreground: #121212;
+  --thirdary: #171717;
+  --text-primary: #ececec;
+  --text-secondary: #a1a1aa;
+  --button-hover: #262626;
+  --neon-color: #ececec; /* Replaced neon with strong primary contrast */
+  --button-hero: #ffffff;
+  --button-hero-hover: #e5e5e5;
+  --quick-stats-bg: #171717;
+  --bg-project-card: #171717;
+  --text-project-card: #0a0a0a;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-thirdary: var(--thirdary);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-button-hover: var(--button-hover);
+  --color-neon: var(--neon-color);
+  --font-sans: var(--font-poppins);
+  --font-mono: var(--font-geist-mono);
+  --color-button-hero: var(--button-hero);
+  --color-button-hero-hover: var(--button-hero-hover);
+  --color-quick-stats-bg: var(--quick-stats-bg);
+  --color-bg-project-card: var(--bg-project-card);
+  --color-text-project-card: var(--text-project-card);
+}
+
+/* 🌈 Gunakan variable di seluruh body */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  transition: background 0.3s ease, color 0.3s ease;
+  font-family: var(--font-sans), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ✨ Animasi cursor blink */
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+.animate-cursor {
+  animation: blink 1.5s infinite;
+}
+
+/* 🎈 Animasi floating (Subtle) */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.floating {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* 💡 Efek Neon Glow - Removed for typography theme, replaced with a very subtle soft shadow */
+.neon {
+  box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.05);
+}
+.dark .neon {
+  box-shadow: 0 4px 20px -5px rgba(255, 255, 255, 0.02);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #3f3f46;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #52525b;
+}
+
+/* 📦 Custom scrollbar for inner scroll containers */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #3f3f46;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #52525b;
+}
+
+/* Tech stack SVG icon filter: always original color */
+.tech-icon-img {
+  transition: transform 0.3s ease;
+}
+
+/* 🔄 Animasi Infinite Scroll */
+@keyframes infinite-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-infinite-scroll {
+  animation: infinite-scroll 25s linear infinite;
+  width: max-content;
+}
+
+.animate-infinite-scroll:hover {
+  animation-play-state: paused;
+}

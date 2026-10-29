@@ -1,0 +1,42 @@
+{
+  "name": "portofoliov2",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit --incremental false",
+    "chat:cleanup": "node scripts/cleanup-chat.mjs",
+    "db:setup": "node scripts/db-setup.mjs",
+    "db:check": "node scripts/db-check.mjs",
+    "test:chat": "node --test tests/chat.test.mjs",
+    "db:import": "node scripts/import-sqlite.mjs"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.18.0",
+    "dotenv": "^17.2.3",
+    "motion": "^12.23.24",
+    "next": "^16.1.6",
+    "openai": "^6.49.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-intersection-observer": "^10.0.0",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.0.1",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  },
+  "engines": {
+    "node": "24.x"
+  }
+}

@@ -49,7 +49,7 @@ Không ghi các đường dẫn kiểu D:\... vào trường src/href của webs
 
 ## 6. Cấu hình chạy — D:\Portfolio\.env.local
 
-NEXT_PUBLIC_BASE_URL phải là URL website thực tế (http://localhost:3000 khi chạy local). Biến này ưu tiên hơn profile.siteUrl; production API yêu cầu biến này.
+NEXT_PUBLIC_BASE_URL phải là URL website thực tế (http://localhost:3000 khi chạy local). Biến này ưu tiên hơn profile.siteUrl; trên Vercel có thể bỏ trống để dùng system URL của deployment. Không đưa URL localhost lên Vercel.
 Các biến ROUTER_* và CHAT_* vẫn ở .env.local, không đặt trong content/.
 Restart dev server sau khi đổi .env.local; build lại bản production sau khi đổi nội dung hoặc domain.
 
@@ -74,4 +74,7 @@ npm run dev
 
 Kiểm tra tên, liên hệ, CV, ảnh, link dự án, giao diện mobile và chatbot.
 Hồ sơ cũ không còn phù hợp sau khi bạn thay thông tin: dùng nút xóa lịch sử chat để bắt đầu ngữ cảnh mới.
+
+
+Sau bước 6: chatbot dùng Turso Cloud. Khung chat được ẩn nếu thiếu biến Turso hoặc AI; thêm cấu hình rồi redeploy để bật. Nút tải CV chỉ hiện khi file tương ứng đã có trong public/ lúc build. Xem docs/DEPLOY-VERCEL.md để triển khai.
 

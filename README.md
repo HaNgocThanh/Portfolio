@@ -33,7 +33,7 @@ npm run dev
 
 db:setup tạo schema idempotent và không xóa dữ liệu đang có. Database URL phải là libsql://... hoặc https://..., có token đọc/ghi. Không hỗ trợ file: hoặc embedded replica trong ứng dụng triển khai.
 
-Mở http://localhost:3000. Trang portfolio có thể build/render khi chưa cấu hình database hoặc AI; chat sẽ trả 503 nếu thiếu cấu hình dịch vụ. Không có thao tác tạo bảng/kết nối database trong lúc build.
+Mở http://localhost:3000. Trang portfolio có thể build/render khi chưa cấu hình database hoặc AI. Khung chat được ẩn cho đến khi có đủ biến Turso và ROUTER_* rồi redeploy; API chat vẫn trả 503 nếu thiếu cấu hình dịch vụ. Không có thao tác tạo bảng/kết nối database trong lúc build.
 
 ## Biến môi trường
 
@@ -82,4 +82,5 @@ npm run db:import -- --source .\data\chat.db --confirm-upload
 ```
 
 Script chỉ đọc nguồn, bỏ qua ID đã tồn tại, không in nội dung hội thoại và có thể chạy lại. Không tự nhập dữ liệu khi deploy.
+
 
